@@ -1,41 +1,38 @@
-package com.company;
-
+package com;
 import java.io.Serializable;
 
 public class Volunteer_details implements Serializable {
 
     private String volunteer_name;
     private String volunteer_address;
-    private String volunteer_cell;
-    private static int volunteer_id = 0;
+    private String volunteer_telephone;
+    private int volunteer_id = 0;
+    private static int count = 0;
 
 
-    public Volunteer_details(String name, String address, String cell){
+    public Volunteer_details(String name, String address, String telephone){
         volunteer_name = name;
         volunteer_address = address;
-        volunteer_cell = cell;
-        setId(getId(volunteer_id)+1);
+        volunteer_telephone = telephone;
+        volunteer_id=getVolunteer_id();
     }
 
-    private int getId(int volunteer_id) {
-        return volunteer_id;
+    public int getVolunteer_Id() {
+        return count;
     }
 
-    public static void setId(int id) {
-        volunteer_id= id;
-    }
 
     public void Volunteer_details(String volunteer_name, String volunteer_city, String volunteer_telephone) throws Exception  {
         this.volunteer_name = volunteer_name;
         this.volunteer_address = volunteer_city;
         int telephone=volunteer_telephone.length();
+        this.volunteer_id=count;
         if (telephone == 10 || telephone == 9 ) {
-            this.volunteer_cell = volunteer_telephone;
+            this.volunteer_telephone = volunteer_telephone;
         }
         else {
             throw new Exception("invalid number");
         }
-        setvolunteer_id(getVolunteer_id() + 1);
     }
 
 
@@ -57,14 +54,14 @@ public class Volunteer_details implements Serializable {
         this.volunteer_address = volunteer_address;
     }
 
-    public String getVolunteer_cell() {
-        return volunteer_cell;
+    public String getVolunteer_telephone() {
+        return volunteer_telephone;
     }
 
-    public void setVolunteer_cell(String volunteer_cell) throws Exception{
-        int telephone= volunteer_cell.length();
+    public void setVolunteer_telephone(String volunteer_telephone) throws Exception{
+        int telephone= volunteer_telephone.length();
         if (telephone == 10 || telephone == 9 ) {
-            this.volunteer_cell = volunteer_cell;
+            this.volunteer_telephone = volunteer_telephone;
         }
         else {
             throw new Exception("invalid number");
@@ -72,13 +69,16 @@ public class Volunteer_details implements Serializable {
     }
 
 
-    public static int getVolunteer_id() {
-        return volunteer_id;
+    public int getVolunteer_id() {
+        return this.volunteer_id;
     }
 
-    public static void setvolunteer_id(int volunteer_id) {
-        Volunteer_details.volunteer_id = volunteer_id;
+    public void setvolunteer_id() {
+
+        count=count+1;
+        this.volunteer_id=count;
     }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -86,6 +86,7 @@ public class Volunteer_details implements Serializable {
         result = prime * result + this.volunteer_id;
         return result;
     }
+
     @Override
     public boolean equals(Object o) {
 
@@ -104,14 +105,14 @@ public class Volunteer_details implements Serializable {
         Volunteer_details c = (Volunteer_details) o;
 
         // Compare the data members and return accordingly
-        return volunteer_cell.equals(c.volunteer_cell);
+        return volunteer_telephone.equals(c.volunteer_telephone);
 
     }
 
 
     public boolean contains(Object obj){
         Volunteer_details other = (Volunteer_details) obj;
-        if(this.volunteer_cell == other.volunteer_cell){
+        if(this.volunteer_telephone == other.volunteer_telephone){
             return true;
         }
         return false;
@@ -119,7 +120,7 @@ public class Volunteer_details implements Serializable {
 
     @Override
     public String toString() {
-        return "Supporter_details [supporter_name=" + volunteer_name + ", supporter_city=" + volunteer_address
-                + ", supporter_telephone=" + volunteer_cell +  "]";
+        return "Volunteer_details [volunteer_name=" + volunteer_name + ", volunteer_city=" + volunteer_address
+                + ", volunteer_telephone=" + volunteer_telephone +  "]";
     }
 }
