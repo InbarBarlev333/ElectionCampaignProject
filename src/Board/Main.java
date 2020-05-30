@@ -6,7 +6,6 @@ import BoardModel.messageBoardRepositoryImp;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-
         messageBoardRepository messages = new messageBoardRepositoryImp();
 
         Message message1 = new Message("this is the 1st topic", "this is the 1st message");
@@ -18,7 +17,7 @@ public class Main {
 
 
         messages.AddMessage(message1);
-        /*messages.AddMessage(message2);
+        messages.AddMessage(message2);
         messages.AddMessage(message3);
         messages.AddMessage(message4);
         messages.AddMessage(message5);
@@ -35,7 +34,7 @@ public class Main {
         messages.EditMessage (message1, "message 1st Has changed");
 
         messages.ShowMessageBoard ();
-        System.out.println("\n");*/
+        System.out.println("\n");
 
     }
 }
