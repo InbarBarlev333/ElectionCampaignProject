@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
 
-        VolunteerRepository volunteers = new VolunteerRepositoryImp();
+        VolunteerRepository volunteers = VolunteerRepositoryImp.getInstance();
 
         Volunteer_details volunteer1 = new Volunteer_details("Dana", "Tel Aviv", "0544387623");
         Volunteer_details volunteer2 = new Volunteer_details("Daniel", "Holon", "0529477895");
