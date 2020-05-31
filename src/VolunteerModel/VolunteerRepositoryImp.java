@@ -13,11 +13,19 @@ public class VolunteerRepositoryImp implements VolunteerRepository {
     private final String FILENAME = "volunteers";
     private Set<Volunteer_details> volunteers;
     private FileManager<Volunteer_details> fileManager;
+    private static VolunteerRepositoryImp INSTANCE;
 
-    public VolunteerRepositoryImp() throws IOException, ClassNotFoundException {
+    private VolunteerRepositoryImp() throws IOException, ClassNotFoundException {
         this.fileManager = new FileManager<>(FILENAME);
         volunteers = new HashSet<Volunteer_details>();
         this.volunteers = fileManager.read();
+    }
+
+    public static VolunteerRepositoryImp getInstance() throws IOException, ClassNotFoundException{
+        if (INSTANCE==null){
+            INSTANCE= new VolunteerRepositoryImp();
+        }
+        return INSTANCE;
     }
 
 
