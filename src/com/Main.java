@@ -3,11 +3,29 @@ package com;
 import VolunteerModel.VolunteerRepository;
 import VolunteerModel.VolunteerRepositoryImp;
 
+import java.io.IOException;
+
 public class Main {
+    public Main() throws IOException, ClassNotFoundException {
+    }
+
     public static void main(String[] args) throws Exception {
 
+       System.out.println(createVolunteer());
+    }
 
-        VolunteerRepository volunteers = VolunteerRepositoryImp.getInstance();
+
+
+    public static Volunteer_details createVolunteer() {
+        return Volunteer_details.builder()
+                .withName("yossi")
+                .withAddress("tel aviv")
+                .build();
+    }
+
+
+    VolunteerRepository volunteers = VolunteerRepositoryImp.getInstance();
+
 
         Volunteer_details volunteer1 = new Volunteer_details("Dana", "Tel Aviv", "0544387623");
         Volunteer_details volunteer2 = new Volunteer_details("Daniel", "Holon", "0529477895");
@@ -34,4 +52,4 @@ public class Main {
 
     }
 
-}
+

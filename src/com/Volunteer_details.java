@@ -1,6 +1,10 @@
 package com;
+import lombok.Builder;
+
 import java.io.Serializable;
 
+
+@Builder
 public class Volunteer_details implements Serializable {
 
     private String volunteer_name;
@@ -9,33 +13,44 @@ public class Volunteer_details implements Serializable {
     private int volunteer_id = 0;
     private static int count = 0;
 
+    public Volunteer_details() {
+        volunteer_name =" " ;
+        volunteer_address= " ";
+        volunteer_telephone= " ";
+        volunteer_id = 0;
+    }
 
-    public Volunteer_details(String name, String address, String telephone){
+    public static VolunteerBuilder builder(){
+        return new VolunteerBuilder();
+    }
+
+
+
+    public Volunteer_details(String name, String address, String telephone) {
         volunteer_name = name;
         volunteer_address = address;
         volunteer_telephone = telephone;
-        volunteer_id=getVolunteer_id();
+        volunteer_id = getVolunteer_id();
     }
+
+
 
     public int getVolunteer_Id() {
         return count;
     }
 
 
-    public void Volunteer_details(String volunteer_name, String volunteer_city, String volunteer_telephone) throws Exception  {
+    public void Volunteer_details(String volunteer_name, String volunteer_city, String volunteer_telephone) throws Exception {
         this.volunteer_name = volunteer_name;
         this.volunteer_address = volunteer_city;
-        int telephone=volunteer_telephone.length();
-        this.volunteer_id=count;
-        if (telephone == 10 || telephone == 9 ) {
+        int telephone = volunteer_telephone.length();
+        this.volunteer_id = count;
+        if (telephone == 10 || telephone == 9) {
             this.volunteer_telephone = volunteer_telephone;
-        }
-        else {
+        } else {
             throw new Exception("invalid number");
         }
     }
-
-
 
 
     public String getVolunteer_name() {
@@ -58,15 +73,15 @@ public class Volunteer_details implements Serializable {
         return volunteer_telephone;
     }
 
-    public void setVolunteer_telephone(String volunteer_telephone) throws Exception{
-        int telephone= volunteer_telephone.length();
-        if (telephone == 10 || telephone == 9 ) {
+    public void setVolunteer_telephone(String volunteer_telephone) throws Exception {
+        int telephone = volunteer_telephone.length();
+        if (telephone == 10 || telephone == 9) {
             this.volunteer_telephone = volunteer_telephone;
-        }
-        else {
+        } else {
             throw new Exception("invalid number");
         }
     }
+
 
 
     public int getVolunteer_id() {
@@ -75,8 +90,8 @@ public class Volunteer_details implements Serializable {
 
     public void setvolunteer_id() {
 
-        count=count+1;
-        this.volunteer_id=count;
+        count = count + 1;
+        this.volunteer_id = count;
     }
 
     @Override
@@ -110,9 +125,9 @@ public class Volunteer_details implements Serializable {
     }
 
 
-    public boolean contains(Object obj){
+    public boolean contains(Object obj) {
         Volunteer_details other = (Volunteer_details) obj;
-        if(this.volunteer_telephone == other.volunteer_telephone){
+        if (this.volunteer_telephone == other.volunteer_telephone) {
             return true;
         }
         return false;
@@ -121,6 +136,7 @@ public class Volunteer_details implements Serializable {
     @Override
     public String toString() {
         return "Volunteer_details [volunteer_name=" + volunteer_name + ", volunteer_city=" + volunteer_address
-                + ", volunteer_telephone=" + volunteer_telephone +  "]";
+                + ", volunteer_telephone=" + volunteer_telephone + "]";
     }
 }
+
