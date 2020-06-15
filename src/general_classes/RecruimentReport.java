@@ -72,16 +72,19 @@ public class RecruimentReport implements Serializable {
     public void create_new_recruiment_report() throws Exception {
         SupporterRepository supporters_list = SupporterRepositoryImpl.getInstance();
         Set<Supporter_details> supporters = supporters_list.showallsupporters();
-        for (Supporter_details supporter1 : supporters) {
-
-            LocalDate date = supporter1.getDate_of_adding();
-            if (date.isBefore(to_date) | date.isAfter(from_date)) {
-                counting++;
-            }
+        if(supporters.isEmpty()) {
+            throw new Exception("There are no supporters");
         }
-        RecruitmentReportRepositoryImpl reports = RecruitmentReportRepositoryImpl.getInstance();
-        reports.add(this);
-    }
+        for (Supporter_details supporter1 : supporters) {
+                LocalDate date = supporter1.getDate_of_adding();
+                if (date.isBefore(to_date) | date.isAfter(from_date)) {
+                    counting++;
+                }
+            }
+            RecruitmentReportRepositoryImpl reports = RecruitmentReportRepositoryImpl.getInstance();
+            reports.add(this);
+        }
+
 
     public void show_report() throws Exception {
         create_new_recruiment_report();

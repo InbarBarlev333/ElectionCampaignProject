@@ -166,6 +166,7 @@ public class BudgetView  {
     {
         try (Scanner scanner = new Scanner(System.in))
         {
+            budgetController.ViewTotalBudget();
             budgetController.ReadTheSet();
             System.out.println("Want to return to Budget menu ? yes/no" + " yes- return no-repeat this action");
             String what = scanner.nextLine();

@@ -14,8 +14,12 @@ public class Recruimentservice {
         reports=RecruitmentReportRepositoryImpl.getInstance();
     }
     public void recruimentreport() throws Exception {
-        RecruimentReport newreport=new  RecruimentReport();
-        newreport.show_report();
+        try {
+            RecruimentReport newreport = new RecruimentReport();
+            newreport.show_report();
+        }catch (Exception ex){
+            System.out.println("no supporters added");
+        }
     }
 
     public void allreports(){

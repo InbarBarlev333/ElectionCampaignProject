@@ -49,14 +49,14 @@ public class MessageView {
                         System.out.println("Only Campign manager and City Headquarter manager can do that");
                         Messagescliimpl();
                     }
-                case "5":
+                case "4":
                     if(Session.getInstance().isadmin())
                         this.editMessage();
                     else {
                         System.out.println("Only Campign manager and City Headquarter manager can do that");
                         Messagescliimpl();
                     }
-                case "6":
+                case "5":
                     ProgramView view=new ProgramView();
                     view.WelcomeProgram();
                 case "q":

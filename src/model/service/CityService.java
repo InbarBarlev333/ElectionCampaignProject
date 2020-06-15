@@ -17,8 +17,12 @@ public class CityService {
         reports= CityReportRepositortyimpl.getInstance();
     }
     public void cityreport() throws Exception {
-        CityReport newreport=new CityReport();
-        newreport.show_report();
+        try {
+            CityReport newreport = new CityReport();
+            newreport.show_report();
+        }catch (Exception ex){
+            System.out.println("no supporters added");
+        }
     }
 
     public void allreports(){

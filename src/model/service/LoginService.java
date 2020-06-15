@@ -21,7 +21,6 @@ public class LoginService {
 
     public boolean login(String email, String password) throws IOException, ClassNotFoundException {
         loginRepo.validateuser(email, password);
-        loginRepo.showall();
         boolean check=loginRepo.validateuser(email, password);
          if(check ==true)
          {

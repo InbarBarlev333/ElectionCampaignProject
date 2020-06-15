@@ -79,6 +79,15 @@ public class ProgramView {
             System.out.println("Login status: " + login);
             if (login == true) {
                 System.out.println("yay! welcome");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+                System.out.println(" ");
+
                 WelcomeProgram();
             } else {
                 System.out.println("Entered wrong credentials");
