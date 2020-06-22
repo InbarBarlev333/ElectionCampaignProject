@@ -206,13 +206,12 @@ public class ProgramView {
 
                 boolean Change_pass = forgetPasswController.Change_pass(email, Newpassword);
                 System.out.println("Change password status: " + Change_pass);
-                System.out.println("return to  welcome menu yes/no");
+                System.out.println("Return to  welcome menu yes/no yes-return no-repeat this action");
                 String what = scanner.nextLine();
                 if (what.equals("yes")) {
                     loginWeclcome();
                 } else {
-                    System.out.println("you have no choise..");
-                    loginWeclcome();
+                    Change_pass ();
                 }
             }
         }
