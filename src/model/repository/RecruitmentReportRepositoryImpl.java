@@ -55,5 +55,6 @@ public class RecruitmentReportRepositoryImpl implements ReportRepository {
                 break;
             }
         }
+        throw new Exception("There is no such report");
     }
 }

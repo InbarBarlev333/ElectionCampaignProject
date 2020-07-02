@@ -156,7 +156,13 @@ public class EventView {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             String scan = scanner.nextLine();
             LocalDate date = LocalDate.parse(scan, formatter);
-            eventcontroller.find(date);
+            try {
+                eventcontroller.find(date);
+            }
+            catch (Exception ex)
+            {
+                System.out.println(ex);
+            }
             System.out.println("Want to return to  Event menu ? yes/no" + " yes- return no-repeat this action");
             String what = scanner.nextLine();
             if(what.equals("yes")) {
@@ -189,73 +195,79 @@ public class EventView {
                     int iddate= Integer.parseInt(scanner.nextLine());
                     System.out.println("Enter the date in the following Format: dd/mm/yyyy");
                     String newdate = scanner.nextLine();
-                    eventcontroller.editevent(command,iddate,newdate);
-                    System.out.println("Want to return to  Event menu ? yes/no" + " yes- return no-repeat this action");
-                    String what = scanner.nextLine();
-                    if(what.equals("yes")) {
-                        Eventscliimpl();
+                    try {
+                        eventcontroller.editevent(command, iddate, newdate);
+                    }catch (Exception ex) {
+                        System.out.println(ex);
                     }
-                    else if (what.equals("no"))
-                    {
-                        editevent();
-                    }
-                    else {
-                        Eventscliimpl();
-                    }
+                        System.out.println("Want to return to  Event menu ? yes/no" + " yes- return no-repeat this action");
+                        String what = scanner.nextLine();
+                        if (what.equals("yes")) {
+                            Eventscliimpl();
+                        } else if (what.equals("no")) {
+                            editevent();
+                        } else {
+                            Eventscliimpl();
+                        }
                 case "2":
                     System.out.println("Enter event's id please ");
                     int idtitle = Integer.parseInt(scanner.nextLine());
                     System.out.println("Enter event's new title please ");
                     String newtitle = scanner.nextLine();
-                    eventcontroller.editevent(command,idtitle,newtitle);
-                    System.out.println("Want to return to  Event menu ? yes/no" + " yes- return no-repeat this action");
-                    String what1 = scanner.nextLine();
-                    if(what1.equals("yes")) {
-                        Eventscliimpl();
+                    try {
+                        eventcontroller.editevent(command, idtitle, newtitle);
+                    }catch (Exception ex) {
+                        System.out.println(ex);
                     }
-                    else if (what1.equals("no"))
-                    {
-                        editevent();
-                    }
-                    else {
-                        Eventscliimpl();
-                    }
+                        System.out.println("Want to return to  Event menu ? yes/no" + " yes- return no-repeat this action");
+                        String what1 = scanner.nextLine();
+                        if (what1.equals("yes")) {
+                            Eventscliimpl();
+                        } else if (what1.equals("no")) {
+                            editevent();
+                        } else {
+                            Eventscliimpl();
+                        }
+
                 case "3":
                     System.out.println("Enter event's id please");
                     int iddescription = Integer.parseInt(scanner.nextLine());
                     System.out.println("Enter event's new description please ");
                     String newdescription = scanner.nextLine();
-                    eventcontroller.editevent(command,iddescription,newdescription);
-                    System.out.println("Want to return to  Event menu ? yes/no" + " yes- return no-repeat this action");
-                    String what4 = scanner.nextLine();
-                    if(what4.equals("yes")) {
-                        Eventscliimpl();
+                    try {
+                        eventcontroller.editevent(command, iddescription, newdescription);
+                    }catch (Exception ex) {
+                        System.out.println(ex);
                     }
-                    else if (what4.equals("no"))
-                    {
-                        editevent();
-                    }
-                    else {
-                        Eventscliimpl();
-                    }
+                        System.out.println("Want to return to  Event menu ? yes/no" + " yes- return no-repeat this action");
+                        String what4 = scanner.nextLine();
+                        if (what4.equals("yes")) {
+                            Eventscliimpl();
+                        } else if (what4.equals("no")) {
+                            editevent();
+                        } else {
+                            Eventscliimpl();
+                        }
+
                 case  "4":
                     System.out.println("Enter event's id please");
                     int idtime = Integer.parseInt(scanner.nextLine());
                     System.out.println("Enter event's new time please like this!! hh mm ");
                     String newtime = scanner.nextLine();
-                    eventcontroller.editevent(command,idtime,newtime);
-                    System.out.println("Want to return to  Event menu ? yes/no" + " yes- return no-repeat this action");
-                    String what5 = scanner.nextLine();
-                    if(what5.equals("yes")) {
-                        Eventscliimpl();
+                    try {
+                        eventcontroller.editevent(command, idtime, newtime);
+                    }catch (Exception ex) {
+                        System.out.println(ex);
                     }
-                    else if (what5.equals("no"))
-                    {
-                        editevent();
-                    }
-                    else {
-                        Eventscliimpl();
-                    }
+                        System.out.println("Want to return to  Event menu ? yes/no" + " yes- return no-repeat this action");
+                        String what5 = scanner.nextLine();
+                        if (what5.equals("yes")) {
+                            Eventscliimpl();
+                        } else if (what5.equals("no")) {
+                            editevent();
+                        } else {
+                            Eventscliimpl();
+                        }
                 case "5":
                     Eventscliimpl();
                 default:

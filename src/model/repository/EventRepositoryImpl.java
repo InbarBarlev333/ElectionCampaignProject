@@ -206,6 +206,7 @@ public class EventRepositoryImpl  extends Observable implements EventRepository 
 
     @Override
     public void showallevents() throws IOException {
+        System.out.println(events.size());
         for (Event event1 : events) {
             System.out.println(event1);
         }

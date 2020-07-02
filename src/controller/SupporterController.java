@@ -17,7 +17,7 @@ public class SupporterController {
 
     public void addSupoorter(String name,String city,String telephone) throws Exception {
         try {
-            if (name == null || name.trim().equals("") || city == null || city.trim().equals("")) {
+            if (name == null | name.trim().equals("") | city == null | city.trim().equals("")) {
                 throw new IllegalArgumentException("Username or password must not be null");
             }
         }catch (Exception ex){

@@ -40,6 +40,7 @@ public class CityReportRepositortyimpl implements ReportRepository {
 
     @Override
     public void show() {
+        System.out.println(cities_rates_report.size());
         for (CityReport one : cities_rates_report) {
             System.out.println(one);
         }
@@ -54,6 +55,8 @@ public class CityReportRepositortyimpl implements ReportRepository {
                 break;
             }
         }
+            throw new Exception("There is no such report");
+
     }
 
 }

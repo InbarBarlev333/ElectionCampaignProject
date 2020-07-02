@@ -111,13 +111,20 @@ public class ReportView {
                     System.out.println("Do you want to see a specific report? yes/no?");
                     String command = scanner.nextLine();
                     if(command.equals("yes")) {
+                        try {
                         System.out.println("Enter the date in the following Format: dd/mm/yyyy");
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                         String scan = scanner.nextLine();
                         LocalDate date = LocalDate.parse(scan, formatter);
                         System.out.println(date);
                         //formatter = DateTimeFormatter.ofPattern(scan);/LocalDate date = LocalDate.parse(scan, formatter);
-                        citycontroller.specific(LocalDate.of(date.getYear(), date.getMonth(), date.getDayOfMonth()));
+
+                            citycontroller.specific(LocalDate.of(date.getYear(), date.getMonth(), date.getDayOfMonth()));
+                        }
+                        catch (Exception ex)
+                        {
+                            System.out.println(ex);
+                        }
                     }
                     else{
                         Reportcliimpl();
@@ -182,15 +189,22 @@ public class ReportView {
                     budgetcontroller.allreports();
                     System.out.println("Do you want to see a specific report? yes/no?");
                     String command = scanner.nextLine();
-                    if(command.equals("yes")) {
-                        System.out.println("Enter the date in the following Format: dd/mm/yyyy");
-                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                        String scan = scanner.nextLine();
-                        LocalDate date = LocalDate.parse(scan, formatter);
-                        System.out.println(date);
-                        //formatter = DateTimeFormatter.ofPattern(scan);/LocalDate date = LocalDate.parse(scan, formatter);
-                        budgetcontroller.specific(LocalDate.of(date.getYear(), date.getMonth(), date.getDayOfMonth()));
-                    }
+                    if (command.equals("yes")) {
+                        try {
+                            System.out.println("Enter the date in the following Format: dd/mm/yyyy");
+                            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                            String scan = scanner.nextLine();
+                            LocalDate date = LocalDate.parse(scan, formatter);
+                            System.out.println(date);
+                            //formatter = DateTimeFormatter.ofPattern(scan);/LocalDate date = LocalDate.parse(scan, formatter);
+
+                            budgetcontroller.specific(LocalDate.of(date.getYear(), date.getMonth(), date.getDayOfMonth()));
+                        }
+                    catch(Exception ex){
+                    System.out.println(ex);
+                }
+            }
+
                     else{
                         Reportcliimpl();
                     }
@@ -254,13 +268,18 @@ public class ReportView {
                     System.out.println("Do you want to see a specific report? yes/no?");
                     String command = scanner.nextLine();
                     if(command.equals("yes")) {
+                        try {
                         System.out.println(" the date you want to see a report like this!! dd/mm/yyyy");
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                         String scan = scanner.nextLine();
                         LocalDate date = LocalDate.parse(scan, formatter);
                         System.out.println(date);
                         //formatter = DateTimeFormatter.ofPattern(scan);/LocalDate date = LocalDate.parse(scan, formatter);
-                        recruimentcontroller.specific(LocalDate.of(date.getYear(), date.getMonth(), date.getDayOfMonth()));
+
+                            recruimentcontroller.specific(LocalDate.of(date.getYear(), date.getMonth(), date.getDayOfMonth()));
+                        } catch (Exception ex) {
+                            System.out.println(ex);
+                        }
                     }
                     else{
                         Reportcliimpl();

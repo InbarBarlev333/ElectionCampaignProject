@@ -76,6 +76,7 @@ public class SupporterView {
             }
             catch (Exception ex) {
                 System.out.println(ex);
+            }
                 System.out.println("Want to return to Supporters menu ? yes/no" + " yes- return no-repeat this action");
                 String what = scanner.nextLine();
                 if (what.equals("yes")) {
@@ -85,7 +86,6 @@ public class SupporterView {
                 } else {
                     Supporterscliimpl();
                 }
-            }
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -114,7 +114,7 @@ public class SupporterView {
             System.out.println("Enter supporter's id:");
             int supporterid = Integer.parseInt(scanner.nextLine());
             supportercontroller.deletesupporter(supporterid);
-            System.out.println("Want to return to Supporters menu ? yes/no" + " yes- return no-repeat this action");
+           // System.out.println("Want to return to Supporters menu ? yes/no" + " yes- return no-repeat this action");
             Supporterscliimpl();
         } catch (IOException e) {
             e.printStackTrace();
