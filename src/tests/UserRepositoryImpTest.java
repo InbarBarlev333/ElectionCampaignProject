@@ -50,8 +50,8 @@ public class UserRepositoryImpTest {
     @Test
     public void testchangepass() throws Exception {
         User_repo.add(user4);
-        assertEquals(true, User_repo.changepassword("shiranmai@gmail.com", "55562154"));
-        assertEquals(false,User_repo.changepassword("m@w","123456"));
+        assertEquals(true, User_repo.changepassword( "0546882358","shiran_mai", "shiranmai@gmail.com","55562154"));
+        assertEquals(false,User_repo.changepassword("05454002578","Roni","m@w","123456"));
     }
 
 }

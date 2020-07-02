@@ -11,14 +11,14 @@ public class ForgetPasswController {
         forgetService=new ForgetService();
 
     }
-    public boolean Change_pass(String email, String Newpassword) {
+    public boolean Change_pass(String telephone,String name,String email, String Newpassword) {
         if (email == null || email.trim().equals("") || Newpassword == null || Newpassword.trim().equals("")) {
             throw new IllegalArgumentException("Email or password must not be null");
         }
 
         String session = null;
         try {
-            session = forgetService.Change_pass(email, Newpassword);
+            session = forgetService.Change_pass(telephone,name,email, Newpassword);
         } catch (Exception e) {
             e.printStackTrace();
         }

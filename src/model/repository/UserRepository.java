@@ -12,7 +12,7 @@ public interface   UserRepository {
 
     void showall();
     public boolean validateuser(String email,String password) throws IOException, ClassNotFoundException;
-    public boolean changepassword(String email,String newpassword) throws Exception;
+    public boolean changepassword(String telephone,String name,String email, String newpassword) throws Exception;
    // public void Enteruser(String name,String email,String password,String party,String typeofjob,String telephone) throws Exception;
 
 

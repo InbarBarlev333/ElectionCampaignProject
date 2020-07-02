@@ -33,7 +33,7 @@ public class ProgramView {
             System.out.println("Welcome!");
             System.out.println("1. Sign in");
             System.out.println("2. Sign up");
-            System.out.println("3. change password");
+            System.out.println("3. Change password");
             System.out.println("Q. Exit");
 
             try (Scanner scanner = new Scanner(System.in)) {
@@ -199,12 +199,15 @@ public class ProgramView {
 
         public void Change_pass () {
             try (Scanner scanner = new Scanner(System.in)) {
+                System.out.print("Name: ");
+                String name = scanner.nextLine();
+                System.out.print("Telephone: ");
+                String telephone = scanner.nextLine();
                 System.out.print("Email: ");
                 String email = scanner.nextLine();
                 System.out.print("new password: ");
                 String Newpassword = scanner.nextLine();
-
-                boolean Change_pass = forgetPasswController.Change_pass(email, Newpassword);
+                boolean Change_pass = forgetPasswController.Change_pass(telephone,name,email,Newpassword);
                 System.out.println("Change password status: " + Change_pass);
                 System.out.println("Return to  welcome menu yes/no yes-return no-repeat this action");
                 String what = scanner.nextLine();

@@ -52,10 +52,10 @@ public class UserRepositoryImpl  implements UserRepository {
     }
 
     @Override
-    public boolean changepassword(String email, String newpassword) throws Exception {
+    public boolean changepassword(String telephone,String name,String email, String newpassword) throws Exception {
         for (User user1:users)
         {
-            if(email.equals(user1.getEmail()))
+            if(email.equals(user1.getEmail()) && telephone.equals(user1.getTelephone()) && name.equals(user1.getName()) )
             {
                 user1.setPassword(newpassword);
                 System.out.println("password changes");
