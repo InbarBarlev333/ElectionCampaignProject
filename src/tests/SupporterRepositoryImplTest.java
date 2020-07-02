@@ -70,7 +70,7 @@ class SupporterRepositoryImplTest {
 
     @Test
     public void testFindbyname() throws Exception {
-        assertEquals(null, supporter_repo.findByName("KAKA"));
+        assertEquals(null, supporter_repo.findByName("rororoo"));
         assertEquals(true,supporter_repo.findByName("Shani"));
 
     }

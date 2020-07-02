@@ -177,7 +177,7 @@ public class SupporterRepositoryImpl  implements SupporterRepository {
             }
         }
         if(count==0){
-            throw new Exception("supporters not found");
+            throw new Exception("supporter not found");
         }
 
     }
