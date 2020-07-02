@@ -54,11 +54,7 @@ public class SupporterView {
                 case "q":
                 case "Q":
                 default:
-                    ProgramView view12=new ProgramView();
-                    view12.WelcomeProgram();
-
-
-                    scanner.close();
+                    Supporterscliimpl();
 
             }
         }
@@ -67,7 +63,7 @@ public class SupporterView {
     }
 
 
-    public void addsupporter(){
+    public void addsupporter() throws Exception {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Enter supporter's name:");
             String name = scanner.nextLine();
@@ -75,22 +71,25 @@ public class SupporterView {
             String city = scanner.nextLine();
             System.out.println("Enter supporter's telephone");
             String Telephone = scanner.nextLine();
-            supportercontroller.addSupoorter(name, city, Telephone);
-            System.out.println("Want to return to Supporters menu ? yes/no" + " yes- return no-repeat this action");
-            String what = scanner.nextLine();
-            if(what.equals("yes")) {
-                Supporterscliimpl();
+            try {
+                supportercontroller.addSupoorter(name, city, Telephone);
             }
-            else if (what.equals("no"))
-            {
-                addsupporter();
-            }
-            else {
-                Supporterscliimpl();
+            catch (Exception ex) {
+                System.out.println(ex);
+                System.out.println("Want to return to Supporters menu ? yes/no" + " yes- return no-repeat this action");
+                String what = scanner.nextLine();
+                if (what.equals("yes")) {
+                    Supporterscliimpl();
+                } else if (what.equals("no")) {
+                    addsupporter();
+                } else {
+                    Supporterscliimpl();
+                }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
+
 
     }
     public void showsupporter() throws Exception {

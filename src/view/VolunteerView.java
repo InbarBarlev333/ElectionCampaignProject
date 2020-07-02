@@ -84,18 +84,20 @@ class VolunteerView {
             String city = scanner.nextLine();
             System.out.println("Write volunteer's telephone");
             String Telephone = scanner.nextLine();
-            volunteercontroller.addVolunteer(name, city, Telephone);
-            System.out.println("Want to return to Volunteer menu ? yes/no" + " yes- return no-repeat this action");
-            String what = scanner.nextLine();
-            if(what.equals("yes")) {
-                Volunteerscliimpl();
+            try {
+                volunteercontroller.addVolunteer(name, city, Telephone);
             }
-            else if (what.equals("no"))
-            {
-                addvolunteer();
-            }
-            else {
-                Volunteerscliimpl();
+            catch (Exception ex) {
+                System.out.println(ex);
+                System.out.println("Want to return to Volunteer menu ? yes/no" + " yes- return no-repeat this action");
+                String what = scanner.nextLine();
+                if (what.equals("yes")) {
+                    Volunteerscliimpl();
+                } else if (what.equals("no")) {
+                    addvolunteer();
+                } else {
+                    Volunteerscliimpl();
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

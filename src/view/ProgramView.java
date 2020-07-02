@@ -182,10 +182,10 @@ public class ProgramView {
                 String namenew = scanner.nextLine();
                 System.out.print("Enter your Email: ");
                 String emailnew = scanner.nextLine();
-                System.out.print("Enter your password (leangh of password needs to be 8 or more): ");
+                System.out.print("Enter your password (length of password needs to be 8 or more): ");
                 String passwordnew = scanner.nextLine();
                 System.out.println("Enter your type of job by number");
-                System.out.println("1.campign manger,2.city headquarter manager,3.member of party,4.volunteer,5.technical support,6.telephone receptionist");
+                System.out.println("1.Campign manger,2.City headquarter manager,3.Member of party,4.Volunteer,5.Technical support,6.Telephone receptionist");
                 String typeofjob = scanner.nextLine();
                 System.out.println("Enter your Telephone");
                 String telephone = scanner.nextLine();

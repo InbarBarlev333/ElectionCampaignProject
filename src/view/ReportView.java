@@ -245,7 +245,7 @@ public class ReportView {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("1.show all weekly recruitment report by dates");
             //System.out.println("2.show specific one");
-            System.out.println("2.do you want to come back to report menu");
+            System.out.println("2.Do you want to come back to report menu");
             String command1 = scanner.nextLine();
             switch (command1) {
                 case "1":

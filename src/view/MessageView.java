@@ -118,7 +118,7 @@ public class MessageView {
     public void deletemessage() throws IOException {
         try (Scanner scanner = new Scanner(System.in)) {
 
-            System.out.println("Write messages's id:");
+            System.out.println("Enter messages's id:");
             Scanner titleMessageToDelete = new Scanner(System.in);
             //int MessageToDelete= titleMessageToDelete.nextInt();
             int MessageToDelete= Integer.parseInt(scanner.nextLine());
@@ -133,10 +133,10 @@ public class MessageView {
 
     public void editMessage(){
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("write the message's id you want to change");
+            System.out.println("Enter the message's id you want to change");
             Scanner in= new Scanner(System.in);
             int id= in.nextInt();
-            System.out.println("write the new message");
+            System.out.println("Enter the new message");
             Scanner in1= new Scanner(System.in);
             String NewMessage= in1.nextLine();
 

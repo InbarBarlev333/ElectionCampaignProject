@@ -17,7 +17,13 @@ public class SupporterService {
     }
 
     public void addsupporter(Supporter_details supprter) throws Exception {
+        try {
             repo.add(supprter);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
         }
 
 

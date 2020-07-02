@@ -177,10 +177,10 @@ public class EventView {
     public void editevent()
             {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("1.edit by date? ");
-            System.out.println("2.edit by Title");
-            System.out.println("3.edit by desctiption");
-            System.out.println("4.edit by time");
+            System.out.println("1.Edit by date? ");
+            System.out.println("2.Edit by Title");
+            System.out.println("3.Edit by desctiption");
+            System.out.println("4.Edit by time");
             System.out.println("5.come back to event's menu");
             String command = scanner.nextLine();
             switch (command) {
