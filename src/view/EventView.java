@@ -108,9 +108,12 @@ public class EventView {
             if(what.equals("yes")) {
                 Eventscliimpl();
             }
-            else
+            else if(what.equals("no"))
             {
                 addevent();
+            }
+            else{
+                Eventscliimpl();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -126,9 +129,12 @@ public class EventView {
         if(what.equals("yes")) {
             Eventscliimpl();
         }
-        else
+        else if (what.equals("no"))
         {
             showevents();
+        }
+        else {
+            Eventscliimpl();
         }
     }
 
@@ -137,16 +143,9 @@ public class EventView {
             System.out.println("Enter events's id:");
             int id = Integer.parseInt(scanner.nextLine());
             eventcontroller.deleteevent(id);
-            System.out.println("Want to return to  Event menu ? yes/no" + "yes- return no-repeat this action");
-            String what = scanner.nextLine();
-            if(what.equals("yes")) {
-                Eventscliimpl();
-            }
-            else
-            {
-                deleteevent();
-            }
-        } catch (IOException e) {
+            Eventscliimpl();
+        }
+         catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -163,9 +162,12 @@ public class EventView {
             if(what.equals("yes")) {
                 Eventscliimpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 findevent();
+            }
+            else {
+                Eventscliimpl();
             }
         }
 
@@ -193,9 +195,12 @@ public class EventView {
                     if(what.equals("yes")) {
                         Eventscliimpl();
                     }
-                    else
+                    else if (what.equals("no"))
                     {
                         editevent();
+                    }
+                    else {
+                        Eventscliimpl();
                     }
                 case "2":
                     System.out.println("Enter event's id please ");
@@ -208,9 +213,12 @@ public class EventView {
                     if(what1.equals("yes")) {
                         Eventscliimpl();
                     }
-                    else
+                    else if (what1.equals("no"))
                     {
                         editevent();
+                    }
+                    else {
+                        Eventscliimpl();
                     }
                 case "3":
                     System.out.println("Enter event's id please");
@@ -223,9 +231,12 @@ public class EventView {
                     if(what4.equals("yes")) {
                         Eventscliimpl();
                     }
-                    else
+                    else if (what4.equals("no"))
                     {
                         editevent();
+                    }
+                    else {
+                        Eventscliimpl();
                     }
                 case  "4":
                     System.out.println("Enter event's id please");
@@ -238,9 +249,12 @@ public class EventView {
                     if(what5.equals("yes")) {
                         Eventscliimpl();
                     }
-                    else
+                    else if (what5.equals("no"))
                     {
                         editevent();
+                    }
+                    else {
+                        Eventscliimpl();
                     }
                 case "5":
                     Eventscliimpl();

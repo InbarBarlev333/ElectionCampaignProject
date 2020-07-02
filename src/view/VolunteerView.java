@@ -90,9 +90,12 @@ class VolunteerView {
             if(what.equals("yes")) {
                 Volunteerscliimpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 addvolunteer();
+            }
+            else {
+                Volunteerscliimpl();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -107,9 +110,12 @@ class VolunteerView {
         if(what.equals("yes")) {
             Volunteerscliimpl();
         }
-        else
+        else if (what.equals("no"))
         {
             showvolunteer();
+        }
+        else {
+            Volunteerscliimpl();
         }
     }
 
@@ -118,15 +124,7 @@ class VolunteerView {
             System.out.println("Write volunteer's id:");
             int volunteerid = Integer.parseInt(scanner.nextLine());
             volunteercontroller.deletevolunteer(volunteerid);
-            System.out.println("Want to return to Volunteer menu ? yes/no" + " yes- return no-repeat this action");
-            String what = scanner.nextLine();
-            if(what.equals("yes")) {
-                Volunteerscliimpl();
-            }
-            else
-            {
-                deletevolunteer();
-            }
+            Volunteerscliimpl();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -164,9 +162,12 @@ class VolunteerView {
             if(what.equals("yes")) {
                 Volunteerscliimpl();
             }
-            else
+            else if (what.equals("no"))
             {
                  findvolunteer();
+            }
+            else {
+                Volunteerscliimpl();
             }
 
         }
@@ -192,9 +193,12 @@ class VolunteerView {
                     if(what.equals("yes")) {
                         Volunteerscliimpl();
                     }
-                    else
+                    else if (what.equals("no"))
                     {
                        editvolunteer();
+                    }
+                    else {
+                        Volunteerscliimpl();
                     }
                 case "2":
                     System.out.println("write volunteers id please ");
@@ -207,9 +211,12 @@ class VolunteerView {
                     if(what1.equals("yes")) {
                         Volunteerscliimpl();
                     }
-                    else
+                    else if (what1.equals("no"))
                     {
                         editvolunteer();
+                    }
+                    else {
+                        Volunteerscliimpl();
                     }
                 case "3":
                     System.out.println("write volunteers id please ");
@@ -222,9 +229,12 @@ class VolunteerView {
                     if(what3.equals("yes")) {
                         Volunteerscliimpl();
                     }
-                    else
+                    else if (what3.equals("no"))
                     {
                         editvolunteer();
+                    }
+                    else {
+                        Volunteerscliimpl();
                     }
                 case "4":
                     Volunteerscliimpl();

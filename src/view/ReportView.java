@@ -84,9 +84,12 @@ public class ReportView {
             if(what.equals("yes")) {
                 Reportcliimpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 cityreport();
+            }
+            else {
+                Reportcliimpl();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -124,9 +127,12 @@ public class ReportView {
                     if(what.equals("yes")) {
                         Reportcliimpl();
                     }
-                    else
+                    else if (what.equals("no"))
                     {
                         allcityreport() ;
+                    }
+                    else {
+                        Reportcliimpl();
                     }
                     break;
                 case "2":
@@ -150,9 +156,12 @@ public class ReportView {
             if(what.equals("yes")) {
                 Reportcliimpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 budgetreport();
+            }
+            else {
+                Reportcliimpl();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -190,9 +199,12 @@ public class ReportView {
                     if(what.equals("yes")) {
                         Reportcliimpl();
                     }
-                    else
+                    else if (what.equals("no"))
                     {
                         allbudgetreport();
+                    }
+                    else {
+                        Reportcliimpl();
                     }
                 case "2":
                     Reportcliimpl();
@@ -215,9 +227,12 @@ public class ReportView {
             if(what.equals("yes")) {
                 Reportcliimpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 recruimentreport();
+            }
+            else {
+                Reportcliimpl();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -255,9 +270,12 @@ public class ReportView {
                     if(what.equals("yes")) {
                         Reportcliimpl();
                     }
-                    else
+                    else if (what.equals("no"))
                     {
                         allrecruimentreport();
+                    }
+                    else {
+                        Reportcliimpl();
                     }
                 case "2":
                     Reportcliimpl();

@@ -19,8 +19,8 @@ public class BudgetView  {
         System.out.println("2. Add new Expenses");
         System.out.println("3. Remove Income");
         System.out.println("4. Remove Expenses ");
-        System.out.println("5. View total budget");
-        System.out.println("6. Read the set");
+        System.out.println("5. View total budget sum");
+        System.out.println("6. Show list of Expenses and Incomes");
         System.out.println("7.Return to general menu");
         try(Scanner scanner = new Scanner(System.in)) {
             String command = scanner.nextLine();
@@ -68,9 +68,12 @@ public class BudgetView  {
             if(what.equals("yes")) {
                 budgetCliImpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 AddNewIncomes();
+            }
+            else {
+                budgetCliImpl();
             }
 
         } catch (Exception e) {
@@ -153,10 +156,14 @@ public class BudgetView  {
             if(what.equals("yes")) {
                 budgetCliImpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 ViewTotalBudget();
             }
+            else {
+                budgetCliImpl();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -173,10 +180,14 @@ public class BudgetView  {
             if(what.equals("yes")) {
                 budgetCliImpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 ReadTheSet();
             }
+            else {
+                budgetCliImpl();
+            }
+
         }
         catch (Exception e)
         {

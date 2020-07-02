@@ -105,9 +105,12 @@ public class MessageView {
         if(what.equals("yes")) {
             Messagescliimpl();
         }
-        else
+        else if (what.equals("no"))
         {
             ShowMessageBoard();
+        }
+        else {
+            Messagescliimpl();
         }
 
     }
@@ -117,18 +120,11 @@ public class MessageView {
 
             System.out.println("Write messages's id:");
             Scanner titleMessageToDelete = new Scanner(System.in);
-            int MessageToDelete= titleMessageToDelete.nextInt();
+            //int MessageToDelete= titleMessageToDelete.nextInt();
+            int MessageToDelete= Integer.parseInt(scanner.nextLine());
             messagecontroller.deletemessage(MessageToDelete);
+            Messagescliimpl();
 
-            System.out.println("Want to return to Message menu ? yes/no" + " yes- return no-repeat this action");
-            String what = scanner.nextLine();
-            if(what.equals("yes")) {
-                Messagescliimpl();
-            }
-            else
-            {
-                deletemessage();
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -151,9 +147,12 @@ public class MessageView {
             if(what.equals("yes")) {
                 Messagescliimpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 editMessage();
+            }
+            else {
+                Messagescliimpl();
             }
 
         } catch (Exception e) {

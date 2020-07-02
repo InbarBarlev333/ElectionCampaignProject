@@ -78,9 +78,12 @@ public class TechnicalProblemView {
             if(what.equals("yes")) {
                 TechnicalProblemsCliImpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 AddNewTechnicalProblem();
+            }
+            else {
+                TechnicalProblemsCliImpl();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -97,9 +100,12 @@ public class TechnicalProblemView {
             if(what.equals("yes")) {
                 TechnicalProblemsCliImpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 DeleteTechnicalProblemsByKnownId();
+            }
+            else {
+                TechnicalProblemsCliImpl();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -116,9 +122,12 @@ public class TechnicalProblemView {
             if(what.equals("yes")) {
                 TechnicalProblemsCliImpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 ViewExistTechnicalProblems();
+            }
+            else {
+                TechnicalProblemsCliImpl();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -133,9 +142,12 @@ public class TechnicalProblemView {
             if(what.equals("yes")) {
                 TechnicalProblemsCliImpl();
             }
-            else
+            else if (what.equals("no"))
             {
                ViewExistTechnicalProblems();
+            }
+            else {
+                TechnicalProblemsCliImpl();
             }
         } catch (Exception e) {
             e.printStackTrace();

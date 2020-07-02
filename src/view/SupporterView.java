@@ -81,9 +81,12 @@ public class SupporterView {
             if(what.equals("yes")) {
                 Supporterscliimpl();
             }
-            else
+            else if (what.equals("no"))
             {
                 addsupporter();
+            }
+            else {
+                Supporterscliimpl();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -98,9 +101,12 @@ public class SupporterView {
         if(what.equals("yes")) {
             Supporterscliimpl();
         }
-        else
+        else if (what.equals("no"))
         {
             showsupporter();
+        }
+        else {
+            Supporterscliimpl();
         }
     }
 
@@ -110,14 +116,7 @@ public class SupporterView {
             int supporterid = Integer.parseInt(scanner.nextLine());
             supportercontroller.deletesupporter(supporterid);
             System.out.println("Want to return to Supporters menu ? yes/no" + " yes- return no-repeat this action");
-            String what = scanner.nextLine();
-            if(what.equals("yes")) {
-                Supporterscliimpl();
-            }
-            else
-            {
-                deletesupporter();
-            }
+            Supporterscliimpl();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -155,9 +154,12 @@ public class SupporterView {
             if(what.equals("yes")) {
                 Supporterscliimpl() ;
             }
-            else
+            else if (what.equals("no"))
             {
                 findsupporter();
+            }
+            else {
+                Supporterscliimpl();
             }
 
         }
@@ -183,9 +185,12 @@ public class SupporterView {
                     if(what.equals("yes")) {
                         Supporterscliimpl();
                     }
-                    else
+                    else if (what.equals("no"))
                     {
                         editsupporter();
+                    }
+                    else {
+                        Supporterscliimpl();
                     }
                 case "2":
                     System.out.println("Enter supporters id please ");
@@ -198,9 +203,12 @@ public class SupporterView {
                     if(what1.equals("yes")) {
                          Supporterscliimpl();
                     }
-                    else
+                    else if (what1.equals("no"))
                     {
                         editsupporter();
+                    }
+                    else {
+                        Supporterscliimpl();
                     }
                 case "3":
                     System.out.println("Enter supporters id please ");
@@ -213,9 +221,12 @@ public class SupporterView {
                     if(what2.equals("yes")) {
                        Supporterscliimpl();
                     }
-                    else
+                    else if (what2.equals("no"))
                     {
                        editsupporter();
+                    }
+                    else {
+                        Supporterscliimpl();
                     }
                 case "4":
                     Supporterscliimpl();

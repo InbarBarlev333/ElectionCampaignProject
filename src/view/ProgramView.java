@@ -210,8 +210,11 @@ public class ProgramView {
                 String what = scanner.nextLine();
                 if (what.equals("yes")) {
                     loginWeclcome();
-                } else {
+                } else if (what.equals("no")){
                     Change_pass ();
+                }
+                else {
+                    loginWeclcome();
                 }
             }
         }
