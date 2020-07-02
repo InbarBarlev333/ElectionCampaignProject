@@ -31,7 +31,7 @@ class VolunteerView {
         System.out.println("3.Delete volunteer");
         System.out.println("4.Find volunteer");
         System.out.println("5.Edit volunteer");
-        System.out.println("6.back to menu");
+        System.out.println("6.Return to menu");
         Scanner scanner = new Scanner(System.in);
         while(scanner.hasNextLine() ){
             String command = scanner.nextLine();

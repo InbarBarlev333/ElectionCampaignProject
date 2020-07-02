@@ -27,7 +27,7 @@ public class SupporterView {
         System.out.println("3.Delete supporter");
         System.out.println("4.Find supporter");
         System.out.println("5.Edit supporter");
-        System.out.println("6.back to menu");
+        System.out.println("6.Return to menu");
         Scanner scanner = new Scanner(System.in);
         while(scanner.hasNextLine() ){
             String command = scanner.nextLine();

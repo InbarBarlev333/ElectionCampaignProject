@@ -32,7 +32,7 @@ public class EventView {
         System.out.println("3.Delete Event");
         System.out.println("4.Find Event by the date of event");
         System.out.println("5.Edit Event");
-        System.out.println("6.return to the genetral menu");
+        System.out.println("6.Return to the genetral menu");
         try (Scanner scanner = new Scanner(System.in)) {
             String command = scanner.nextLine();
             switch (command) {

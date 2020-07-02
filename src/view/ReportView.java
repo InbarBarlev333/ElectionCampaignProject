@@ -37,7 +37,7 @@ public class ReportView {
         System.out.println("4.show and find from all **budget** reports");
         System.out.println("5.add and show  weekly **recruiment** report");
         System.out.println("6.show and find from all **recruiment** reports");
-        System.out.println("7.return to general menu");
+        System.out.println("7.Return to general menu");
         try (Scanner scanner = new Scanner(System.in)) {
             String command = scanner.nextLine();
             switch (command) {

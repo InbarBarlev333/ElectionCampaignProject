@@ -28,7 +28,7 @@ public class MessageView {
         System.out.println("2.Add new Message");
         System.out.println("3.Delete Message");
         System.out.println("4.Edit Message");
-        System.out.println("5.Return to the genetral menu");
+        System.out.println("5.Return to the general menu");
         try (Scanner scanner = new Scanner(System.in)) {
             String command = scanner.nextLine();
             switch (command) {
