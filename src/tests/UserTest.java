@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 
 import general_classes.Technical_support;

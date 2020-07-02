@@ -32,10 +32,6 @@ public class SupporterControllerTest {
 
     @Test
     public void testadded_exist() throws Exception {
-        supportercontroller.addSupoorter(supporter1.getSupporter_name(),supporter1.getSupporter_city(),supporter1.getSupporter_telephone());
-          //  Exception exception = assertThrows(Exception.class, () -> {
-         //       supportercontroller.addSupoorter(supporter2.getSupporter_name(),supporter2.getSupporter_city(),supporter2.getSupporter_telephone());
-         //   });
 
         try {
             supportercontroller.addSupoorter(supporter2.getSupporter_name(),supporter2.getSupporter_city(),supporter2.getSupporter_telephone());
@@ -51,24 +47,19 @@ public class SupporterControllerTest {
             Assert.fail("Exception " + ex);
         }
 
-        //    String expectedMessage = "Already exists!";
-        //    String actualMessage = exception.getMessage();
-
-         //   assertTrue(actualMessage.contains(expectedMessage));
-
-       // Exception exception1 = assertThrows( IllegalArgumentException.class, () -> {
-        //    supportercontroller.addSupoorter(supporter3.getSupporter_name(),supporter3.getSupporter_city(),supporter3.getSupporter_telephone());
-        //});
-
-     //   String expectedMessage1 = "Username or password must not be null";
-      //  String actualMessage1 = exception1.getMessage();
-
-      //  assertTrue(actualMessage1.contains(expectedMessage1));
         }
 
     public void testedit() throws Exception{
 
+        try {
+            supportercontroller.editsupporter("1",50,"48");
+        }
+        catch (Exception e) {
+            Assert.fail("Exception " + e);
+        }
+
     }
+
 
     }
 
