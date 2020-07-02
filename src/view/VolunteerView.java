@@ -89,6 +89,7 @@ class VolunteerView {
             }
             catch (Exception ex) {
                 System.out.println(ex);
+            }
                 System.out.println("Want to return to Volunteer menu ? yes/no" + " yes- return no-repeat this action");
                 String what = scanner.nextLine();
                 if (what.equals("yes")) {
@@ -98,7 +99,7 @@ class VolunteerView {
                 } else {
                     Volunteerscliimpl();
                 }
-            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

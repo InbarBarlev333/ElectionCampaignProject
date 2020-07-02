@@ -38,6 +38,7 @@ public class BudgetReportRepositoryImpl implements ReportRepository {
 
     @Override
     public void show() {
+        System.out.println(budget_reports.size());
         for (BudgetReport one : budget_reports) {
             System.out.println(one.toStringReport());
         }

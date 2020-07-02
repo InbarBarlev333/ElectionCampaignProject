@@ -40,6 +40,7 @@ public class RecruitmentReportRepositoryImpl implements ReportRepository {
 
     @Override
     public void show() {
+        System.out.println(recruitment_reports.size());
         for (RecruimentReport one : recruitment_reports) {
             System.out.println(one.toStringReport());
         }
