@@ -48,14 +48,18 @@ public class CityReportRepositortyimpl implements ReportRepository {
 
     @Override
     public void showspecificreport(LocalDate date) throws Exception {
+        int count=0;
         for (CityReport one : cities_rates_report) {
             if (one.getDate().isEqual(date)) {
                 System.out.println("This is the requested report:\n");
                 one.show_report();
+                count++;
                 break;
             }
         }
+        if(count==0) {
             throw new Exception("There is no such report");
+        }
 
     }
 

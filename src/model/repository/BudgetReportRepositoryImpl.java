@@ -46,13 +46,17 @@ public class BudgetReportRepositoryImpl implements ReportRepository {
 
     @Override
     public void showspecificreport(LocalDate date) throws Exception {
+        int count=0;
         for (BudgetReport one : budget_reports) {
             if((date.isAfter(one.getFrom_date()) | date.isBefore(one.getTo_date()))){
                 System.out.println("This is the requested report:\n");
                 one.show_update_budget();
+                count++;
                 break;
             }
         }
-        throw new Exception("There is no such report");
+        if(count==0) {
+            throw new Exception("There is no such report");
+        }
     }
 }

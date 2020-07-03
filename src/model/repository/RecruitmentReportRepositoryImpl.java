@@ -49,13 +49,17 @@ public class RecruitmentReportRepositoryImpl implements ReportRepository {
 
     @Override
     public void showspecificreport(LocalDate date) throws Exception {
+        int count=0;
         for (RecruimentReport one : recruitment_reports) {
             if (date.isAfter(one.getFrom_date()) | date.isBefore(one.getTo_date())) {
                 System.out.println("This is the requested report:\n");
                 one.show_report();
+                count++;
                 break;
             }
         }
-        throw new Exception("There is no such report");
+        if(count==0) {
+            throw new Exception("There is no such report");
+        }
     }
 }
