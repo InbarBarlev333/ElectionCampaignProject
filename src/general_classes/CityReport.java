@@ -11,6 +11,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.*;
 
+import static java.util.stream.Collectors.toMap;
+
 public class CityReport implements Serializable {
     private String name;
     private LocalDate date;
@@ -77,17 +79,26 @@ public class CityReport implements Serializable {
                 Rates_by_cities.put(city, howmuchpeople);
             }
         }
+        Rates_by_cities = sortByValue(Rates_by_cities); //descending order
         CityReportRepositortyimpl reports = CityReportRepositortyimpl.getInstance();
         reports.add(this);
     }
 
     public static HashMap<String, Integer> sortByValue(HashMap<String, Integer> hm) {
-        LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
+       /* LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
 //Use Comparator.reverseOrder() for reverse ordering
         hm.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
-        return hm;
+        return hm; */
+
+       Map<String, Integer> sortedByValueDesc = hm
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.<String, Integer> comparingByValue().reversed())
+                .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1,
+                        LinkedHashMap::new));
+        return (HashMap<String, Integer>) sortedByValueDesc;
     }
 }
