@@ -18,7 +18,7 @@ public class ReportView {
 
     public ReportView() throws Exception {
         budgetcontroller = new BudgetReportservice();
-        citycontroller = new Citycontroller();
+        citycontroller = Citycontroller.getInstance();
         recruimentcontroller = new Recruimentcontroller();
 
     }

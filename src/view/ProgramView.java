@@ -171,8 +171,7 @@ public class ProgramView {
                     case "q":
 
                     default:
-                        System.out.println("Goodbye");
-                        loginWeclcome();
+                        WelcomeProgram();
 
                 }
 

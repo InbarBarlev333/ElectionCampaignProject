@@ -9,11 +9,19 @@ import java.io.IOException;
 
 public class MessageController {
     private MessageService messagemodel;
+    private static MessageController  INSTANCE;
 
     public MessageController() throws IOException, ClassNotFoundException {
         messagemodel =new MessageService();
 
     }
+    public static  MessageController getInstance() throws Exception {
+        if (INSTANCE == null) {
+            INSTANCE = new  MessageController();
+        }
+        return INSTANCE;
+    }
+
 
     public void AddMessage( Message message1) throws Exception {
         Message message = new Message(message1);

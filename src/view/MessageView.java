@@ -12,11 +12,11 @@ import java.util.Scanner;
 public class MessageView {
     private MessageController messagecontroller;
 
-    public MessageView() throws IOException, ClassNotFoundException {
-        messagecontroller = new MessageController();
+    public MessageView() throws Exception {
+        messagecontroller = MessageController.getInstance();
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws Exception {
         MessageView welcomeHit = new MessageView();
         welcomeHit.Messagescliimpl();
     }
