@@ -14,11 +14,11 @@ import java.util.Scanner;
 public class EventView {
     private EventController eventcontroller;
 
-    public EventView() throws IOException, ClassNotFoundException {
-        eventcontroller = new EventController();
+    public EventView() throws Exception {
+        eventcontroller = EventController.getInstance();
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) throws Exception {
         EventView welcomeHit = new EventView();
         welcomeHit.Eventscliimpl();
     }

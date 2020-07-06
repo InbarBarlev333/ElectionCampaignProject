@@ -10,10 +10,17 @@ import java.time.LocalTime;
 
 public class EventController {
     private EventService eventmodel;
+    private static EventController INSTANCE;
 
     public EventController() throws IOException, ClassNotFoundException {
         eventmodel=new EventService ();
 
+    }
+    public static  EventController getInstance() throws Exception {
+        if (INSTANCE == null) {
+            INSTANCE = new  EventController();
+        }
+        return INSTANCE;
     }
 
     public void addevent(LocalDate date, LocalTime time, String event_title, String description) throws Exception {
