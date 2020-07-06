@@ -17,11 +17,11 @@ public class ForgetService {
         ForgetRepo = userRepository1;
     }
 
-    public String Change_pass(String telephone,String name,String email, String newPassword) throws Exception {
+    public boolean Change_pass(String telephone,String name,String email, String newPassword) throws Exception {
         if (this.ForgetRepo.changepassword(telephone,name,email,newPassword)) {
-            return UUID.randomUUID().toString();
+            return true;
         }
-        return null;
+      return false;
     }
 
 }

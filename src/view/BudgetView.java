@@ -46,7 +46,7 @@ public class BudgetView  {
                 case "q":
                 case "Q":
                 default:
-                    System.exit(0);
+                    budgetCliImpl();
             }
         }
         catch (Exception e) {

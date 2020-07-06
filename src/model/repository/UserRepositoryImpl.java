@@ -57,12 +57,19 @@ public class UserRepositoryImpl  implements UserRepository {
         {
             if(email.equals(user1.getEmail()) && telephone.equals(user1.getTelephone()) && name.equals(user1.getName()) )
             {
-                user1.setPassword(newpassword);
-                System.out.println("password changes");
-                return true;
+                if(user1.getPassword().equals(newpassword))
+                {
+                    System.out.println("The password hasn't changed because it is equal to the old one");
+                    return true;
+                }
+                else {
+                    user1.setPassword(newpassword);
+                    System.out.println("password changed!");
+                    return true;
+                }
             }
         }
-        System.out.println("there is no such email");
+        System.out.println("There is no such user");
         return false;
     }
 

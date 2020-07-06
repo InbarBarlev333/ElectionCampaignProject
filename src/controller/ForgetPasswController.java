@@ -15,12 +15,10 @@ public class ForgetPasswController {
         if (email == null || email.trim().equals("") || Newpassword == null || Newpassword.trim().equals("")) {
             throw new IllegalArgumentException("Email or password must not be null");
         }
-
-        String session = null;
         try {
-            session = forgetService.Change_pass(telephone,name,email, Newpassword);
+           forgetService.Change_pass(telephone,name,email, Newpassword);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
         return false;
     }

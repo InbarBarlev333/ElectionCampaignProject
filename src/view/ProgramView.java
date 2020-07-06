@@ -215,7 +215,7 @@ public class ProgramView {
                 System.out.print("new password: ");
                 String Newpassword = scanner.nextLine();
                 boolean Change_pass = forgetPasswController.Change_pass(telephone,name,email,Newpassword);
-                System.out.println("Change password status: " + Change_pass);
+                //System.out.println("Change password status: " + Change_pass);
                 System.out.println("Return to  welcome menu yes/no yes-return no-repeat this action");
                 String what = scanner.nextLine();
                 if (what.equals("yes")) {

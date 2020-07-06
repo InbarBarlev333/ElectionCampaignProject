@@ -71,9 +71,7 @@ public class EventView {
                 case "q":
                 case "Q":
                 default:
-                    System.exit(0);
-                    //  Supporterscliimpl();
-                    scanner.close();
+                    Eventscliimpl();
 
             }
         } catch (Exception e) {
