@@ -9,17 +9,31 @@ public class BudgetReportcontroller {
     private BudgetReportservice reportmodel;
 
     public BudgetReportcontroller() throws Exception {
-       reportmodel=new BudgetReportservice();
+        try {
+            reportmodel = new BudgetReportservice();
+        }
+        catch (Exception ex){
+            System.out.println(ex);
+        }
     }
 
     public void budgetreport() throws Exception {
-        reportmodel.budgetreport();
+        try {
+            reportmodel.budgetreport();
+        }
+        catch (Exception ex){
+            System.out.println(ex);
+        }
     }
     public void allreports(){
         reportmodel.allreports();
     }
     public void specific(LocalDate local) throws Exception {
-        reportmodel.specific(local);
+        try {
+            reportmodel.specific(local);
+        }catch (Exception ex){
+            System.out.println(ex);
+        }
     }
 
 }

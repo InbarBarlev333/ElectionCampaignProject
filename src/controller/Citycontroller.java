@@ -29,6 +29,11 @@ public class Citycontroller {
        cityservice.allreports();
     }
     public void specific(LocalDate local) throws Exception {
-        cityservice.specific(local);
+        try {
+            cityservice.specific(local);
+        }catch (Exception ex)
+        {
+            System.out.println(ex);
+        }
     }
 }
