@@ -192,6 +192,8 @@ public class VolunteerRepositoryImpl implements  VolunteerRepository {
         for (Volunteer_details volunteer1 : volunteers) {
             if (volunteer1.getVolunteer_id()== id); {
                 volunteer1.setVolunteer_name(name);
+                fileManager.write(volunteers);
+                break;
             }
         }
 
@@ -203,6 +205,8 @@ public class VolunteerRepositoryImpl implements  VolunteerRepository {
         for (Volunteer_details volunteer1 : volunteers) {
             if (volunteer1.getVolunteer_id() == id) {
                 volunteer1.setVolunteer_city(city);
+                fileManager.write(volunteers);
+                break;
             }
         }
     }
@@ -212,6 +216,8 @@ public class VolunteerRepositoryImpl implements  VolunteerRepository {
         for (Volunteer_details volunteer1 : volunteers) {
             if (volunteer1.getVolunteer_id() == id) {
                 volunteer1.setVolunteer_telephone(telephone);
+                fileManager.write(volunteers);
+                break;
             }
         }
     }
