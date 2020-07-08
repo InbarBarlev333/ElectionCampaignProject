@@ -7,6 +7,7 @@ import general_classes.User;
 import general_classes.Volunteers;
 import model.repository.UserRepository;
 import model.repository.UserRepositoryImpl;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -53,6 +54,11 @@ public class LoginControllerTest {
         assertEquals(false,User_login.login("user","password123"));
 
 
+    }
+    @AfterAll
+    static void tearDown()
+    {
+        System.out.println("All tests end successfully");
     }
 
 

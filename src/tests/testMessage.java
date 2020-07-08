@@ -6,6 +6,7 @@ package tests;
 import general_classes.Message;
 import model.repository.messageBoardRepository;
 import model.repository.messageBoardRepositoryImp;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +38,11 @@ class testMessage {
         String actualMessage = exception.getMessage();
 
         assertTrue(actualMessage.contains(expectedMessage));
+    }
+    @AfterAll
+    static void tearDown()
+    {
+        System.out.println("All tests end successfully");
     }
 
 }

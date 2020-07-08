@@ -1,9 +1,10 @@
-package Temp;
+package tests;
 
 
 import GeneralClasses.Volunteer_details;
 
 import junit.framework.TestCase;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -28,6 +29,13 @@ class TestVolunteer extends TestCase {
         String actualMessage = exception.getMessage();
 
     }
+
+    @AfterAll
+    public void tearDown()
+    {
+        System.out.println("All tests end successfully");
+    }
+
 
 }
 
