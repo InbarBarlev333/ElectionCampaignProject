@@ -12,12 +12,12 @@ import model.service.BudgetReportservice;
 
 public class ReportView {
 
-    private BudgetReportservice budgetcontroller;
+    private BudgetReportcontroller budgetcontroller;
     private Citycontroller citycontroller;
     private Recruimentcontroller recruimentcontroller;
 
     public ReportView() throws Exception {
-        budgetcontroller = new BudgetReportservice();
+        budgetcontroller = new BudgetReportcontroller();
         citycontroller = Citycontroller.getInstance();
         recruimentcontroller = new Recruimentcontroller();
 
@@ -157,7 +157,12 @@ public class ReportView {
     public void budgetreport() {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Here is your latest weekly budget report:\n");
-            budgetcontroller.budgetreport();
+            try {
+                budgetcontroller.budgetreport();
+            }
+            catch (Exception ex){
+                System.out.println(ex);
+            }
             System.out.println("Want to return to  Reports menu ? yes/no" + " yes- return no-repeat this action");
             String what = scanner.nextLine();
             if(what.equals("yes")) {
@@ -235,7 +240,11 @@ public class ReportView {
     public void recruimentreport() {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Here is your latest city report:\n");
-            recruimentcontroller.recruimentreport();
+            try {
+                recruimentcontroller.recruimentreport();
+            }catch (Exception ex){
+                System.out.println(ex);
+            }
             System.out.println("Want to return to  Reports menu ? yes/no" + " yes- return no-repeat this action");
             String what = scanner.nextLine();
             if(what.equals("yes")) {

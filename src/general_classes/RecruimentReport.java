@@ -9,12 +9,14 @@ import model.repository.SupporterRepositoryImpl;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Set;
 
 public class RecruimentReport implements Serializable {
     private String name;
     private LocalDate dateofreport;
-    protected static int counting = 0;
+    protected ArrayList<Supporter_details> total=new ArrayList<>();
+    protected  int counting = 0;
     protected LocalDate from_date;
     protected LocalDate to_date;
     protected int id;
@@ -61,12 +63,12 @@ public class RecruimentReport implements Serializable {
 
     @Override
     public String toString() {
-        return "RecruimentReport: " +
-                "name='" + name + '\'' +
-                ", date of report =" + dateofreport +
-                ", from_date=" + from_date +
-                ", to_date=" + to_date +
-                ", number of supporters added this week= " + counting ;
+        return "RecruimentReport: " + "\n"+
+                "Name=" + name + "\n"+
+                "Date of report =" + dateofreport + "\n"+
+                "From_date=" + from_date + "\n"+
+                "To_date=" + to_date + "\n"+
+                "Number of supporters added this week= " + counting ;
     }
 
     public void create_new_recruiment_report() throws Exception {
@@ -78,9 +80,11 @@ public class RecruimentReport implements Serializable {
         for (Supporter_details supporter1 : supporters) {
                 LocalDate date = supporter1.getDate_of_adding();
                 if (date.isBefore(to_date) | date.isAfter(from_date)) {
-                    counting++;
+                    total.add(supporter1);
+
                 }
             }
+           counting=total.size();
             RecruitmentReportRepositoryImpl reports = RecruitmentReportRepositoryImpl.getInstance();
             reports.add(this);
         }

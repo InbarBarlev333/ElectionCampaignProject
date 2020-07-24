@@ -17,8 +17,10 @@ import java.util.Set;
 public class BudgetReport implements Serializable {
     protected LocalDate from_date;
     protected LocalDate to_date;
-    protected double before_budget;
-    protected double after_budget;
+    protected ArrayList<TotalUpdateBudget> total=new ArrayList<TotalUpdateBudget>();
+    protected ArrayList<TotalUpdateBudget> totalbefore=new ArrayList<TotalUpdateBudget>();
+    protected double before_budget=0;
+    protected double after_budget=0;
     protected double totaldiffrence;
     protected String nameofreport;
 
@@ -78,33 +80,31 @@ public class BudgetReport implements Serializable {
     @Override
     public String toString() {
         if (this.totaldiffrence < 0) {
-            return "BudgetReport: " +
-                    "from_date=" + from_date +
-                    ", to_date=" + to_date +
-                    ", last_week_budget=" + before_budget +
-                    ", today_budget=" + after_budget +
+            return "BudgetReport: \n" +
+                    "From_date=" + from_date + "\n" +
+                    "To_date=" + to_date +"\n" +
+                    "Last_week_budget=" + before_budget + "\n" +
+                    "Today_budget=" + after_budget + "\n" +
                     " There is less money then last week :( " +
-                    ", totaldiffrence=" + totaldiffrence ;
+                    " Total diffrence=" + totaldiffrence ;
         }
         else if(this.totaldiffrence==0){
-            return "BudgetReport{" +
-                    "from_date=" + from_date +
-                    ", to_date=" + to_date +
-                    ", last_week_budget=" + before_budget +
-                    ", today_budget=" + after_budget +
-                    " There is no difference then last week: " +
-                    ", totaldiffrence=" + totaldiffrence +
-                    '}';
+            return "BudgetReport:" +"\n" +
+                    "from_date=" + from_date + "\n" +
+                    "to_date=" + to_date +"\n" +
+                    "last_week_budget=" + before_budget +"\n" +
+                    "today_budget=" + after_budget +"\n" +
+                    "There is no difference then last week: " +
+                    " total diffrence=" + totaldiffrence ;
         }
         else {
-            return "BudgetReport{" +
-                    "from_date=" + from_date +
-                    ", to_date=" + to_date +
-                    ", last_week_budget=" + before_budget +
-                    ", today_budget=" + after_budget +
-                    " There is more money then last week ! " +
-                    " totaldiffrence= " + totaldiffrence +
-                    '}';
+            return "BudgetReport:" +"\n" +
+                    "From_date=" + from_date +"\n" +
+                    "To_date=" + to_date +"\n" +
+                    "Last_week_budget=" + before_budget +"\n" +
+                    "Today_budget=" + after_budget +"\n" +
+                    "There is more money then last week ! " +
+                    "Total difference= " + totaldiffrence ;
         }
     }
 
@@ -116,15 +116,26 @@ public class BudgetReport implements Serializable {
                 this.before_budget = budget1.getSum();
                 break;
             }
-
+            if(budget1.getDate().isBefore(from_date)){
+                totalbefore.add(budget1);
+            }
         }
-        for (TotalUpdateBudget budget1 : budget) {
-            if (budget1.getDate().equals(to_date)) {
 
-                this.after_budget = budget1.getSum();
-                break;
+        for (TotalUpdateBudget budget1 : budget) {
+            if (budget1.getDate().isAfter(from_date) | (budget1.getDate().isBefore(to_date) || budget1.getDate().isEqual(to_date))) {
+                total.add(budget1);
             }
 
+        }
+        if(!totalbefore.isEmpty()) {
+            TotalUpdateBudget update1 = totalbefore.get(totalbefore.size() - 1);
+            this.before_budget = update1.getSum();
+        }
+        if(!total.isEmpty()) {
+            TotalUpdateBudget update = total.get(total.size() - 1);
+            this.after_budget = update.getSum();
+        }else{
+            this.after_budget=budget.get(budget.size()-1).getSum();
         }
         this.totaldiffrence=caculatedifference(after_budget,before_budget);
         BudgetReportRepositoryImpl reports = BudgetReportRepositoryImpl.getInstance();
